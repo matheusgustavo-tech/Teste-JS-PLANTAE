@@ -139,3 +139,14 @@ resetarTexto.addEventListener("click", () => {
 // 7. Inicializa a interface na tela
 // ========================================
 atualizarUI();
+
+// parte do lucas
+
+let mobileMenu = document.getElementById("mobileMenu");
+let menu = document.getElementById("menu");
+
+function abrirMenuMobile() {
+    menu.classList.toggle("active");
+}
+
+mobileMenu.addEventListener('click', abrirMenuMobile);
