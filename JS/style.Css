@@ -1,4 +1,4 @@
-/* ===== RESET GLOBAL ===== */
+/* ===== RESET  */
 body {
     margin: 0;
     background: #f7f7f7;
@@ -254,6 +254,9 @@ body {
     border-radius: 18px;
     padding-top: 8px;
     text-align: center;
+    opacity: 0.4;
+    filter: grayscale(1);
+    transition: 0.3s ease;
 }
 
 .conquista-item img {
@@ -266,6 +269,13 @@ body {
     font-size: 12px;
     color: #6a8e4e;
     line-height: 1.1;
+}
+
+/* Desbloqueada */
+.conquista-item.desbloqueada {
+    opacity: 1 !important;
+    filter: grayscale(0) !important;
+    transform: scale(1.05);
 }
 
 /* ===== QUIZ ===== */
@@ -285,12 +295,12 @@ body {
 }
 
 .quiz-section .subtitle {
-    font-size: 14px;
-    color: #666;
+    font-size: 18px;
+    color: #667085;
     margin-bottom: 30px;
 }
 
-/* ===== CARDS QUIZ (CORRIGIDO E MAIOR) ===== */
+/* ===== CARDS QUIZ ===== */
 .quiz-card {
     width: 100%;
     background: #ffffff;
@@ -299,7 +309,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 150px;                /* ALTURA AUMENTADA */
+    min-height: 150px;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
     margin-bottom: 30px;
     border: 2px solid #e6e6e6;
@@ -328,11 +338,11 @@ body {
 
 .folhas-badge {
     position: absolute;
-    top: -14px;                        /* Ajustado */
+    top: -14px;
     background: #d8f7d4ab;
-    padding: 5px 16px;                 /* Ajustado */
+    padding: 5px 16px;
     border-radius: 20px;
-    font-size: 10px;                   /* Ajustado */
+    font-size: 10px;
     font-weight: 600;
     color: #2c473e;
     border: 1px solid #bdebb7;
@@ -340,9 +350,9 @@ body {
 }
 
 .quiz-icon {
-    max-width: 110px;      /* AUMENTADO */
+    max-width: 110px;
     width: 100%;
-    height: 75px;          /* AUMENTADO */
+    height: 75px;
     object-fit: contain;
 }
 
@@ -353,25 +363,25 @@ body {
 }
 
 .quiz-texts h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
-    color: #222;
     min-height: 44px;
     display: flex;
     align-items: center;
 }
 
 .quiz-texts p {
-    font-size: 14px;
+    font-size: 16px;
     min-height: 36px;
     display: flex;
     align-items: center;
+    color: #2c473e;
 }
 
 /* Cores por Quiz */
-.quiz1 .quiz-texts p { color: #2b7a78; }
-.quiz2 .quiz-texts p { color: #ff6b6b; }
-.quiz3 .quiz-texts p { color: #ffd93d; }
+.quiz1 .quiz-texts h3 { color: #2c473e; }
+.quiz2 .quiz-texts h3 { color: #0a6794; }
+.quiz3 .quiz-texts h3{ color: #6a8e4e; }
 
 /* Botão Quiz */
 .btn-quiz {
@@ -403,8 +413,8 @@ body {
 }
 
 .videos-section .subtitle {
-    font-size: 14px;
-    color: #666;
+    font-size: 20px;
+    color: #667085;
     margin-bottom: 25px;
 }
 
@@ -465,10 +475,7 @@ body {
     font-weight: 600;
 }
 
-/* =============================
-    ARTIGOS & LEITURAS (CORRIGIDO)
-============================= */
-
+/* ARTIGOS */
 .artigos-section {
   width: 90%;
   max-width: 1200px;
@@ -493,10 +500,9 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 25px;
   justify-items: center;
-  grid-template-columns: fr;
 }
 
-/* CARD ARTIGO (igual ao card de vídeo) */
+/* CARD ARTIGO */
 .artigo-card2 {
   background: #fff;
   border-radius: 18px;
@@ -514,7 +520,7 @@ body {
 
 .artigo-card2 img {
   width: 100%;
-  height: 190px;             /* Mesmo tamanho do vídeo */
+  height: 190px;
   object-fit: cover;
 }
 
@@ -528,7 +534,7 @@ body {
   font-size: 16px;
   color: #222;
   margin-bottom: 6px;
-  min-height: 44px;         /* Mantém altura como no Quiz */
+  min-height: 44px;
   display: flex;
   align-items: center;
 }
@@ -565,7 +571,7 @@ body {
     align-items: center;
     gap: 8px;
     padding: 10px 15px;
-    background: linear-gradient(90deg, #1827f5a9, #1100ff);
+    background: linear-gradient(90deg, #2c473e, #385e51);
     background-size: 200% 200%;
     color: white;
     font-weight: 600;
@@ -582,5 +588,290 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-
 .finish{}
+
+
+/* ==============================
+   SCROLL HORIZONTAL NO MOBILE
+============================== */
+@media (max-width: 768px) {
+
+    .videos-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
+    }
+
+    .video-card {
+        min-width: 260px;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+
+    .artigos-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
+    }
+
+    .artigo-card2 {
+        min-width: 280px;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+}
+
+/* ==============================
+   RESPONSIVIDADE GERAL 
+============================== */
+@media (max-width: 768px) {
+
+    /* Container */
+    .container {
+        padding: 25px 15px;
+    }
+
+    .text1 h1 {
+        font-size: 22px;
+    }
+
+    .text1 p {
+        font-size: 14px;
+    }
+
+    /* Nível */
+    .nivel {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card-info {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    /* Card da Árvore */
+    .card {
+        padding: 25px;
+        max-width: 95%;
+    }
+
+    .arvoreP img {
+        width: 220px;
+    }
+
+    .progress-bar {
+        height: 28px;
+    }
+
+    .barra {
+        line-height: 28px;
+        font-size: 13px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Missões */
+    .missao {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .missao h3 {
+        font-size: 18px;
+    }
+
+    .missao label {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Painel inferior */
+    .painel-inferior {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .box {
+        width: 90%;
+    }
+
+    /* Sequência */
+    .sequencia-box {
+        height: auto;
+        gap: 10px;
+    }
+
+    /* Conquistas */
+    .conquistas-lista {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .conquista-item {
+        width: 90px;
+        height: 130px;
+    }
+
+    .conquista-item img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .conquista-item p {
+        font-size: 13px;
+    }
+
+    /* Quiz Section */
+    .quiz-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .quiz-left {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quiz-icon {
+        max-width: 90px;
+        height: 65px;
+    }
+
+    .folhas-badge {
+        font-size: 9px;
+        padding: 4px 12px;
+        top: -10px;
+    }
+
+    .quiz-texts h3 {
+        font-size: 18px;
+        min-height: auto;
+    }
+
+    .quiz-texts p {
+        font-size: 18px;
+        min-height: auto;
+    }
+
+    .btn-quiz {
+        width: 60%;
+}
+}
+
+/* ==============================
+   RESPONSIVIDADE VÍDEOS E ARTIGOS
+============================== */
+@media (max-width: 768px) {
+
+    /* Vídeos - scroll horizontal */
+    .videos-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 10px;
+    }
+
+    .videos-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .video-card {
+        min-width: 260px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+    /* Artigos - scroll horizontal */
+    .artigos-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 10px;
+    }
+
+    .artigos-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .artigo-card2 {
+        min-width: 280px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+}
+
+/* ==============================
+  TELAS DE 480px)
+============================== */
+@media (max-width: 480px) {
+
+    .text1 h1 {
+        font-size: 20px;
+    }
+
+    .arvoreP img {
+        width: 180px;
+    }
+
+    .quiz-icon {
+        max-width: 75px;
+        height: 55px;
+    }
+
+    .conquista-item {
+        width: 80px;
+        height: 120px;
+    }
+}
+
+
+
+/* usando para teste mensagem encima das consquistas caso queria testa precisa editar no span da primeira conquista.
+passe o curso encima do eco aguardião II
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+} 
