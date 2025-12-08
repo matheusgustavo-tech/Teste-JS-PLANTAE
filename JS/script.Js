@@ -220,3 +220,13 @@ resetarTexto.addEventListener("click", () => {
 restaurarMissoes();
 restaurarConquistas();
 atualizarUI();
+
+// ===== Botão "Ver Conquistas" - Scroll suave =====
+const btnConquistas = document.getElementById("btnConquistas");
+
+btnConquistas.addEventListener("click", () => {
+    const alvo = document.getElementById("conquistas");
+    if (alvo) {
+        alvo.scrollIntoView({ behavior: "smooth" });
+    }
+});

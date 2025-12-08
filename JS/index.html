@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!--informação no final do site
+precisa alterar os botoes do quis-->
+
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
@@ -39,7 +42,7 @@
         <p class="prox-nivel" id="textoProx">Próximo nível em 200 folhas</p>
 
         <div class="buttons">
-            <button class="btn verde">Ver conquistas</button>
+            <button class="btn verde" id="btnConquistas">Ver conquistas</button>
             <button class="btn cinza" id="btnReiniciar">Reiniciar</button>
         </div>
     </section>
@@ -75,35 +78,34 @@
         </div>
 
 <!-- CONQUISTAS -->
-<div class="box conquistas-box">
+<div id="conquistas" class="box conquistas-box">
     <h3>Conquistas</h3>
 
     <div class="conquistas-lista">
 
         <div class="conquista-item tooltip" data-meta="100">
-            <img src="img/medalha.png" alt="">
+            <img src="img/medalha.png" alt="medalha">
             <p>Eco guardião I</p>
             
-            <!-- esses span abaixo é para tentar colocar quando passar o cusor encima  -->
-
-
-        <!-- <span class="tooltip-text">Colete 100 folhas para ganhar esta medalha</span>  -->
+            <!-- esses span abaixo é para tentar colocar quando passar o cusor encima não achei legal
+             não conseguir desenvolver melhor no prazo curto-->
+            <span class="tooltip-text">Colete 100 folhas </span>
 
         </div>
 
         <div class="conquista-item tooltip" data-meta="500">
-            <img src="img/medalha.png" alt="">
+            <img src="img/medalha.png" alt="medalha">
             <p>Eco guardião II</p>
 
-         <!--   <span class="tooltip-text">Colete 500 folhas para ganhar esta medalha</span> -->
+       <span class="tooltip-text">Colete 500 folhas </span> 
         </div>
 
         <div class="conquista-item tooltip" data-meta="1000"> 
-            <img src="img/medalha.png" alt="">
+            <img src="img/medalha.png" alt="medalha">
             <p>Eco guardião III</p>
 
             
-           <!-- <span class="tooltip-text">Colete 1000 folhas para ganhar esta medalha</span> -->
+           <span class="tooltip-text">Colete 1000 folhas </span> 
         </div>
 
     </div>
@@ -307,11 +309,13 @@
         </div>
     </section>
 
-</div>
-
     
-
-
     <script src="script.js"></script>
 </body>
+
+<!-- Pessoal digitar no console 
+ localStorage.clear();
+location.reload();
+assim zera as conquistas-->
 </html>
+
